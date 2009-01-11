@@ -10,15 +10,17 @@ class RSBundle
       realfile = nil
       bundle_or_name.scan(/^(=|\*|\/)(.*)$/).each do |line|
         case line[0]
-          when "="
-            unless realfile.nil?
-              self.add(realfile)
-            end
-            realfile = RSFiles.new(line[1])
-          when "/"
-            realfile.add("/#{line[1]}")
-          when "*"
-            realfile.password = line[1]
+        when "@"
+          @source = line[1]
+        when "="
+          unless realfile.nil?
+            self.add(realfile)
+          end
+          realfile = RSFiles.new(line[1])
+        when "/"
+          realfile.add("/#{line[1]}")
+        when "*"
+          realfile.password = line[1]
         end
       end
       self.add(realfile)
