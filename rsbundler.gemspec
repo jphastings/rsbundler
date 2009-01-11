@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s| 
   s.name = "RSBundler"
-  s.version = "0.0.1"
+  s.version = "0.0.2"
   s.author = "JP Hastings-Spital"
   s.email = "contact@projects.kedakai.co.uk"
   s.homepage = "http://projectrs.kedakai.co.uk/rsbundler"
